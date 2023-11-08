@@ -1,0 +1,24 @@
+     <script>
+     var img = document.createElement("img");
+     var img1 = document.createElement("img");
+     var img2 = document.createElement("img"); 
+     var img3 = document.createElement("img"); 
+     function displayImage(src, width, height) {
+     img.src = src; 
+     img.width = width; 
+     img.height = height; 
+     document.body.appendChild(img); 
+     img1.src = src; 
+     img1.width = width; 
+     img1.height = height; 
+     document.body.appendChild(img1); 
+     img2.src = src; 
+     img2.width = width; 
+     img2.height = height; 
+     document.body.appendChild(img2);
+     img3.src = src; 
+     img3.width = width; 
+     img3.height = height; 
+     document.body.appendChild(img3); 
+     }
+     </script>
