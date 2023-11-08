@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>h1{
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+div{
+    height: 1500px;
+}</style>
+</head>
+<body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>var counter = 0;
+var lastPointScroll = 0;
+$(window).scroll(function(){
+    var a = $(this).scrollTop();
+
+    if(a == 0)
+      var counterIncrement = counter = 0;
+    else if(a > lastPointScroll)
+      var counterIncrement = counter += 0.05;
+    else
+      var counterIncrement = counter -= 0.05;
+
+
+    lastPointScroll = a;
+    $("#test1").text(counterIncrement.toFixed(2));
+
+})
+
+document.onkeydown = function(e) {
+    switch(e.which) {
+        case 37: // left
+        alert("hello world");
+        break;
+
+        case 38: // up
+        alert("hello atul");
+        break;
+
+        case 39: // right
+        alert("hello kumar");
+        break;
+
+        case 40: // down
+        alert("hello atul kumar");
+
+        break;
+
+        default: return; // exit this handler for other keys
+    }
+    e.preventDefault(); // prevent the default action (scroll / move caret)
+};
+</script>
+<p id="test1">0</p>
+<div id="results"></div>
+<div></div>
+
+</body>
+</html>
+
