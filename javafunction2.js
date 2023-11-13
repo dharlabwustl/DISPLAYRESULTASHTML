@@ -1,0 +1,1 @@
+displayImage(array[0], array[0],array[0], array[0], 512, 512);
