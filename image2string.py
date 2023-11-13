@@ -11,13 +11,45 @@ def writetextfromafile_toanother(htmlfile,mode,headerfile):
 def write_text(htmlfile,mode,text):
     with open(htmlfile, mode) as file:
         file.write(text)
+def image2base64(image_filename):
+    with open(image_filename, "rb") as image2string:
+        converted_string = base64.b64encode(image2string.read())
+    return converted_string
+
+def push_image_in_javascript_variable(converted_string,arrayname,htmlfilename):
+    with open(htmlfilename, "a") as file:
+        file.write('\n')
+        file.write('src="data:image/png;base64, ')
+    with open(htmlfilename, "ab") as file:
+        file.write(converted_string)
+    with open(htmlfilename, "a") as file:
+        file.write('"\n')
+        file.write(arrayname+'.push(src)\n')
+    ############################
+def push_imagefile_asbase64_in_javascript_var(image_filename,arrayname,htmlfile):
+    image_filename_base64=image2base64(image_filename)
+    push_image_in_javascript_variable(image_filename_base64,arrayname,htmlfile)
 ## write javascript function
-htmlfile="encode.html"
-headerfile="header.txt"
+htmlfile="encode_1.html"
+headerfile="header.html"
 writetextfromafile_toanother(htmlfile,"w",headerfile)
-javascript_file="javafunction.txt"
+df = pd.DataFrame(data={'col1': [1, 2], 'col2': [4, 3]})
+write_text(htmlfile,'a',df.to_html(classes="table table-dark",index=False).replace('<th>','<th style ="background-color: royalblue; color: white">'))
+
+javascript_file= "begin_javascript.js"
 writetextfromafile_toanother(htmlfile,"a",javascript_file)
-javascript_file="javafunction1.txt"
+javascript_file= "javafunction.js"
+writetextfromafile_toanother(htmlfile,"a",javascript_file)
+image_filename="Normal-CT-head-5Age-30-40.jpg"
+push_imagefile_asbase64_in_javascript_var(image_filename,'array',htmlfile)
+push_imagefile_asbase64_in_javascript_var(image_filename,'array1',htmlfile)
+push_imagefile_asbase64_in_javascript_var(image_filename,'array2',htmlfile)
+push_imagefile_asbase64_in_javascript_var(image_filename,'array3',htmlfile)
+javascript_file= "javafunction1.js"
+writetextfromafile_toanother(htmlfile,"a",javascript_file)
+javascript_file= "javafunction2.js"
+writetextfromafile_toanother(htmlfile,"a",javascript_file)
+javascript_file= "end_javascript.js"
 writetextfromafile_toanother(htmlfile,"a",javascript_file)
 footerfile="footer.txt"
 writetextfromafile_toanother(htmlfile,"a",footerfile)
@@ -52,7 +84,7 @@ writetextfromafile_toanother(htmlfile,"a",footerfile)
 #         header_txt = header_file.read()
 #     with open(htmlfile, "w") as file:
 #         file.write(header_txt)
-# with open("header.txt", "r") as header_file:
+# with open("header.html", "r") as header_file:
 #     header_txt = header_file.read()
 # with open('encode.html', "w") as file:
 #     file.write(header_txt)
