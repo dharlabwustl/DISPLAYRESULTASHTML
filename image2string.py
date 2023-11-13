@@ -1,6 +1,39 @@
 import base64
 import pandas as pd
 
+def write_html_empty_table(n_row,n_col,mode,table_filename):
+    with open(table_filename, mode) as file:
+        file.write('<table style="width:100%">\n')
+        file.write('<tr>\n')
+        for x in range(n_col):
+            file.write('<th id=header'+ str(x) + '>Contact</th>\n')
+        file.write('</tr>\n')
+        for x in range(n_row):
+            file.write('<tr>\n')
+            for y in range(n_col):
+                file.write('<td id=row'+ str(x) + '_col_' + str(y)+ '>Contact</th>\n')
+            file.write('</tr>\n')
+        file.write('</table>\n')
+
+
+#     <table style="width:100%">
+# <tr>
+# <th id="header1" >Company</th>
+# <th>Contact</th>
+# <th>Country</th>
+# </tr>
+# <tr>
+# <td>Alfreds Futterkiste</td>
+# <td>Maria Anders</td>
+# <td>Germany</td>
+# </tr>
+# <tr>
+# <td>Centro comercial Moctezuma</td>
+# <td>Francisco Chang</td>
+# <td>Mexico</td>
+# </tr>
+# </table>
+
 ## write header
 # print(converted_string)
 def writetextfromafile_toanother(htmlfile,mode,headerfile):
@@ -35,7 +68,7 @@ headerfile="header.html"
 writetextfromafile_toanother(htmlfile,"w",headerfile)
 df = pd.DataFrame(data={'col1': [1, 2], 'col2': [4, 3]})
 write_text(htmlfile,'a',df.to_html(classes="table table-dark",index=False).replace('<th>','<th style ="background-color: royalblue; color: white">'))
-
+write_html_empty_table(2,4,'a',htmlfile)
 javascript_file= "begin_javascript.js"
 writetextfromafile_toanother(htmlfile,"a",javascript_file)
 javascript_file= "javafunction.js"
