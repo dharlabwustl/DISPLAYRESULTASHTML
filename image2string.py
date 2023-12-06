@@ -5,7 +5,7 @@ import pandas as pd
 # write_html_empty_table(table_id,n_row,n_col,mode,table_filename): this function writes an empty html table
 def write_html_empty_table(table_id,n_row,n_col,mode,table_filename):
     with open(table_filename, mode) as file:
-        file.write('<table id='+table_id+'  style="width:100%">\n')
+        file.write('<table id='+table_id+'  style="width:80%">\n')
         file.write('<tr>\n')
         for x in range(n_col):
             file.write('<th id=header'+ str(x) + '></th>\n')
