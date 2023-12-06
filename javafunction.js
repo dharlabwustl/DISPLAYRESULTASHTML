@@ -22,23 +22,27 @@ function displayImage(src, src1,src2,src3, width, height) {
 img.src = src;
 img.width = width;
 img.height = height;
-img.title = "GRAYSCALE";
+// img.title = "GRAYSCALE";
+img.style="transform:rotate(270deg)";
 
 div1.appendChild(img);
 img1.src = src1;
 img1.width = width;
 img1.height = height;
-img1.title = "CSF";
+// img1.title = "CSF";
+img1.style="transform:rotate(270deg)";
 div2.appendChild(img1);
 img2.src = src2;
 img2.width = width;
 img2.height = height;
-img2.title = "CSF COMPARTMENT";
+// img2.title = "CSF COMPARTMENT";
+img2.style="transform:rotate(270deg)";
 div3.appendChild(img2);
 img3.src = src3;
 img3.width = width;
 img3.height = height;
-img3.title="SAH COMPARTMENT"
+// img3.title="SAH COMPARTMENT"
+img3.style="transform:rotate(270deg)";
 div4.appendChild(img3);
 }
 
