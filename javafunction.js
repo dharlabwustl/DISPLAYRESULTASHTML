@@ -13,11 +13,19 @@ var div1 = document.createElement("div") //figure");
 var div2 = document.createElement("div") //figure");
 var div3 = document.createElement("div") //figure");
 var div4 = document.createElement("div") //figure");
-document.body.appendChild(div)
-div.appendChild(div1);
-div.appendChild(div2);
-div.appendChild(div3);
-div.appendChild(div4);
+// document.body.appendChild(div)
+// div.appendChild(div1);
+// div.appendChild(div2);
+// div.appendChild(div3);
+// div.appendChild(div4);
+var firstRow0=document.getElementById("row1_col_0")
+var firstRow1=document.getElementById("row1_col_1")
+var firstRow2=document.getElementById("row1_col_2")
+var firstRow3=document.getElementById("row1_col_3")
+firstRow0.appendChild(div1);
+firstRow1.appendChild(div2);
+firstRow2.appendChild(div3);
+firstRow3.appendChild(div4);
 function displayImage(src, src1,src2,src3, width, height) {
 img.src = src;
 img.width = width;
