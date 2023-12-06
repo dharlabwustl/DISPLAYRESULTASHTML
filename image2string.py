@@ -66,16 +66,14 @@ def push_imagefile_asbase64_in_javascript_var(image_filename,arrayname,htmlfile)
     image_filename_base64=image2base64(image_filename)
     push_image_in_javascript_variable(image_filename_base64,arrayname,htmlfile)
 ## write javascript function
-htmlfile="encode_1.html"
+htmlfile="result_visualization_prototype.html"
 headerfile="header.html"
 writetextfromafile_toanother(htmlfile,"w",headerfile)
 n_row_image=0
-image_files_ext=['gray.png','_left_right_brain.png','_class1.png','_class2.png']
+image_files_ext=['gray.png','_left_right_brain.png','_class1.png','_class2.png','.png']
 image_dir='/media/atul/WDJan2022/WASHU_WORKS/PROJECTS/DISPLAYASHTML/IMAGES'
 
-# df = pd.DataFrame(data={'col1': [1, 2], 'col2': [4, 3]})
-# write_text(htmlfile,'a',df.to_html(classes="table table-dark",index=False).replace('<th>','<th style ="background-color: royalblue; color: white">'))
-write_html_empty_table('imagetable',2,4,'a',htmlfile)
+write_html_empty_table('imagetable',2,len(image_files_ext),'a',htmlfile)
 javascript_file= "begin_javascript.js"
 writetextfromafile_toanother(htmlfile,"a",javascript_file)
 n_col_images=len(image_files_ext)
@@ -94,13 +92,15 @@ for slice_num in range(50):
     bet_image=scan_name_with_slice_id+image_files_ext[1] #'_left_right_brain.png'
     ich_image=scan_name_with_slice_id+image_files_ext[2] #'_class1.png'
     phe_image=scan_name_with_slice_id+image_files_ext[3] #'_class2.png'
-    print(os.path.join(image_dir,gray_image))
-    if os.path.exists(os.path.join(image_dir,gray_image)) and os.path.exists(os.path.join(image_dir,bet_image)) and os.path.exists(os.path.join(image_dir,ich_image)) and os.path.exists(os.path.join(image_dir,phe_image)) :
+    csf_image=scan_name_with_slice_id+image_files_ext[4] #'_class2.png'
+    print(os.path.join(image_dir,csf_image))
+    if os.path.exists(os.path.join(image_dir,csf_image)) and os.path.exists(os.path.join(image_dir,gray_image)) and os.path.exists(os.path.join(image_dir,bet_image)) and os.path.exists(os.path.join(image_dir,ich_image)) and os.path.exists(os.path.join(image_dir,phe_image)) :
         print("yes")
         push_imagefile_asbase64_in_javascript_var(os.path.join(image_dir,gray_image),array_names[0],htmlfile)
         push_imagefile_asbase64_in_javascript_var(os.path.join(image_dir,bet_image),array_names[1],htmlfile)
         push_imagefile_asbase64_in_javascript_var(os.path.join(image_dir,ich_image),array_names[2],htmlfile)
         push_imagefile_asbase64_in_javascript_var(os.path.join(image_dir,phe_image),array_names[3],htmlfile)
+        push_imagefile_asbase64_in_javascript_var(os.path.join(image_dir,csf_image),array_names[4],htmlfile)
 
 
 # for file_ext_id  in range(len(image_files_ext)):
@@ -172,6 +172,17 @@ javascript_file= "javafunction2.js"
 writetextfromafile_toanother(htmlfile,"a",javascript_file)
 javascript_file= "end_javascript.js"
 writetextfromafile_toanother(htmlfile,"a",javascript_file)
+csvfile='../IMAGES/ICH_0001_01012017_1028_2_threshold-1024.0_2018.0TOTAL_VersionDate-08102023_11_20_2023.csv'
+df=pd.DataFrame(data={'SESSION_NAME':['ICH_0001_CT_20170101']})
+write_text(htmlfile,'a',df.to_html(classes="table table-dark",index=False).replace('<th>','<th style ="background-color: royalblue; color: white">'))
+df =pd.read_csv(csvfile) #.transpose() # pd.DataFrame(data={'col1': [1, 2], 'col2': [4, 3]})
+df_columns=df.columns
+df.loc[-1] = df_columns
+# df=df.reset_index()
+df=df.transpose()
+df.columns=['Values',"Fields"]
+df = df[['Fields','Values']]
+write_text(htmlfile,'a',df.to_html(classes="table table-dark",index=False).replace('<th>','<th style ="background-color: royalblue; color: white">'))
 footerfile="footer.txt"
 writetextfromafile_toanother(htmlfile,"a",footerfile)
 #     function_to_write = '    var img = document.createElement("img");\
