@@ -5,14 +5,14 @@ var img2 = document.createElement("img");
 var img3 = document.createElement("img");
 var div = document.createElement("div");
 div.className = "parent"
-var div1 = document.createElement("figure");
-var figcaption1=document.createElement("figcaption");
-var t = document.createTextNode("Fig.1 - A view of the pulpit rock in Norway.");
-figcaption1.appendChild(t);
-div1.appendChild(figcaption1)
-var div2 = document.createElement("figure");
-var div3 = document.createElement("figure");
-var div4 = document.createElement("figure");
+var div1 = document.createElement("div") //figure");
+// var figcaption1=document.createElement("figcaption");
+// var t = document.createTextNode("Fig.1 - A view of the pulpit rock in Norway.");
+// figcaption1.appendChild(t);
+// div1.appendChild(figcaption1)
+var div2 = document.createElement("div") //figure");
+var div3 = document.createElement("div") //figure");
+var div4 = document.createElement("div") //figure");
 document.body.appendChild(div)
 div.appendChild(div1);
 div.appendChild(div2);
@@ -42,7 +42,7 @@ img3.title="SAH COMPARTMENT"
 div4.appendChild(img3);
 }
 
-var array= new Array();
-var array1= new Array();
-var array2= new Array();
-var array3= new Array();
+// var array= new Array();
+// var array1= new Array();
+// var array2= new Array();
+// var array3= new Array();

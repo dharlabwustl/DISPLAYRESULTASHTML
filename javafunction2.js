@@ -1,1 +1,1 @@
-displayImage(array[0], array[0],array[0], array[0], 512, 512);
+displayImage(array_0[0],array_1[0], array_2[0],array_3[0],  512, 512);
