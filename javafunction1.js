@@ -1,5 +1,5 @@
 
-var image_index=0;
+var image_index=initial_slice_with_lesion;
      document.onkeydown = function(e) { 
      switch(e.which) { 
      case 37: 

@@ -139,10 +139,11 @@ writetextfromafile_toanother(htmlfile,"a",javascript_file)
 # push_imagefile_asbase64_in_javascript_var(image_filename,'array1',htmlfile)
 # push_imagefile_asbase64_in_javascript_var(image_filename,'array2',htmlfile)
 # push_imagefile_asbase64_in_javascript_var(image_filename,'array3',htmlfile)
-javascript_file= "javafunction1.js"
-writetextfromafile_toanother(htmlfile,"a",javascript_file)
 initial_slice_with_lesion=str(17)
 write_text(htmlfile,"a","var initial_slice_with_lesion=  "+initial_slice_with_lesion + ";")
+javascript_file= "javafunction1.js"
+writetextfromafile_toanother(htmlfile,"a",javascript_file)
+
 javascript_file= "javafunction2.js"
 writetextfromafile_toanother(htmlfile,"a",javascript_file)
 javascript_file= "end_javascript.js"
