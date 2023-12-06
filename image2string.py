@@ -46,6 +46,7 @@ def writetextfromafile_toanother(htmlfile,mode,headerfile):
 def write_text(htmlfile,mode,text):
     with open(htmlfile, mode) as file:
         file.write(text)
+        file.write("\n")
 def image2base64(image_filename):
     with open(image_filename, "rb") as image2string:
         converted_string = base64.b64encode(image2string.read())
@@ -132,6 +133,22 @@ for slice_num in range(50):
 #             # list_slices.append(slice_id)
 #
 #     # push_imagefile_asbase64_in_javascript_var(file_ext_each_file,array_name,htmlfile)
+
+write_text(htmlfile,"a","var zeroRow0=document.getElementById('row0_col_0');")
+write_text(htmlfile,"a","var zeroRow1=document.getElementById('row0_col_1');")
+write_text(htmlfile,"a","var zeroRow2=document.getElementById('row0_col_2');")
+write_text(htmlfile,"a","var zeroRow3=document.getElementById('row0_col_3');")
+write_text(htmlfile,"a","function filltable() {")
+write_text(htmlfile,"a","zeroRow0.innerHTML="+"ATUL;")
+write_text(htmlfile,"a","zeroRow1.innerHTML="+"ATUL;")
+write_text(htmlfile,"a","zeroRow2.innerHTML="+"ATUL;")
+write_text(htmlfile,"a","zeroRow3.innerHTML="+"ATUL;")
+write_text(htmlfile,"a","}")
+
+initial_slice_with_lesion=str(17)
+write_text(htmlfile,"a","var initial_slice_with_lesion=  "+initial_slice_with_lesion + ";")
+write_text(htmlfile,"a","var imagewidth=  "+str(100*20/(len(image_files_ext)+0.5)) + ";")
+write_text(htmlfile,"a","var imageheight=  "+str(100*20/(len(image_files_ext)+0.5)) + ";")
 javascript_file= "javafunction.js"
 writetextfromafile_toanother(htmlfile,"a",javascript_file)
 # image_filename="Normal-CT-head-5Age-30-40.jpg"
@@ -139,8 +156,7 @@ writetextfromafile_toanother(htmlfile,"a",javascript_file)
 # push_imagefile_asbase64_in_javascript_var(image_filename,'array1',htmlfile)
 # push_imagefile_asbase64_in_javascript_var(image_filename,'array2',htmlfile)
 # push_imagefile_asbase64_in_javascript_var(image_filename,'array3',htmlfile)
-initial_slice_with_lesion=str(17)
-write_text(htmlfile,"a","var initial_slice_with_lesion=  "+initial_slice_with_lesion + ";")
+
 javascript_file= "javafunction1.js"
 writetextfromafile_toanother(htmlfile,"a",javascript_file)
 

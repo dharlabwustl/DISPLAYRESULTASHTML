@@ -5,9 +5,9 @@ var image_index=initial_slice_with_lesion;
      case 37: 
      try{ 
      image_index=image_index-1;
-    displayImage(array_0[image_index], array_1[image_index],array_2[image_index], array_3[image_index], 256, 256);
+    displayImage(array_0[image_index], array_1[image_index],array_2[image_index], array_3[image_index], imagewidth, imageheight);
      if (image_index >= 0){
-     displayImage(array_0[image_index], array_1[image_index],array_2[image_index], array_3[image_index], 256, 256);} else {image_index=0}
+     displayImage(array_0[image_index], array_1[image_index],array_2[image_index], array_3[image_index], imagewidth, imageheight);} else {image_index=0}
      break;
      } catch (e) {
  }
@@ -16,7 +16,7 @@ var image_index=initial_slice_with_lesion;
      image_index=image_index+1;
 
      if (image_index < array_0.length){
-     displayImage(array_0[image_index], array_1[image_index],array_2[image_index], array_3[image_index], 256, 256);} else {image_index=array_0.length-1}
+     displayImage(array_0[image_index], array_1[image_index],array_2[image_index], array_3[image_index], imagewidth, imageheight);} else {image_index=array_0.length-1}
      break;
      } catch (e) {
  }
@@ -25,7 +25,7 @@ var image_index=initial_slice_with_lesion;
      image_index=image_index+1;
 
      if (image_index < array_0.length){
-     displayImage(array_0[image_index], array_1[image_index],array_2[image_index], array_3[image_index], 256, 256);} else {image_index=array_0.length-1}
+     displayImage(array_0[image_index], array_1[image_index],array_2[image_index], array_3[image_index], imagewidth, imageheight);} else {image_index=array_0.length-1}
      break;
      } catch (e) {
  }
@@ -34,7 +34,7 @@ var image_index=initial_slice_with_lesion;
      image_index=image_index-1;
 
      if (image_index >= 0){
-     displayImage(array_0[image_index], array_1[image_index],array_2[image_index], array_3[image_index], 256, 256);} else {image_index=0}
+     displayImage(array_0[image_index], array_1[image_index],array_2[image_index], array_3[image_index], imagewidth, imageheight);} else {image_index=0}
      break;
      } catch (e) { 
  } 
