@@ -69,7 +69,7 @@ htmlfile="encode_1.html"
 headerfile="header.html"
 writetextfromafile_toanother(htmlfile,"w",headerfile)
 n_row_image=0
-image_files_ext=['gray.png','_left_right_brain.png','_class2.png','_class1.png']
+image_files_ext=['gray.png','_left_right_brain.png','_class1.png','_class2.png']
 image_dir='/media/atul/WDJan2022/WASHU_WORKS/PROJECTS/DISPLAYASHTML/IMAGES'
 
 # df = pd.DataFrame(data={'col1': [1, 2], 'col2': [4, 3]})

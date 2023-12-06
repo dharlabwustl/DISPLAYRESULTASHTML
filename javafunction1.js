@@ -7,7 +7,7 @@ var image_index=0;
      image_index=image_index-1;
     displayImage(array_0[image_index], array_1[image_index],array_2[image_index], array_3[image_index], 512, 512);
      if (image_index >= 0){
-     displayImage(displayImage(array_0[image_index], array_1[image_index],array_2[image_index], array_3[image_index], 512, 512);} else {image_index=0}
+     displayImage(array_0[image_index], array_1[image_index],array_2[image_index], array_3[image_index], 512, 512);} else {image_index=0}
      break;
      } catch (e) {
  }
@@ -16,7 +16,7 @@ var image_index=0;
      image_index=image_index+1;
 
      if (image_index < array_0.length){
-     displayImage(array_0[image_index], array_0[image_index],array_0[image_index], array_0[image_index], 512, 512);} else {image_index=array_0.length-1}
+     displayImage(array_0[image_index], array_1[image_index],array_2[image_index], array_3[image_index], 512, 512);} else {image_index=array_0.length-1}
      break;
      } catch (e) {
  }
@@ -25,7 +25,7 @@ var image_index=0;
      image_index=image_index+1;
 
      if (image_index < array_0.length){
-     displayImage(array_0[image_index], array_0[image_index],array_0[image_index], array_0[image_index], 512, 512);} else {image_index=array_0.length-1}
+     displayImage(array_0[image_index], array_1[image_index],array_2[image_index], array_3[image_index], 512, 512);} else {image_index=array_0.length-1}
      break;
      } catch (e) {
  }
@@ -34,7 +34,7 @@ var image_index=0;
      image_index=image_index-1;
 
      if (image_index >= 0){
-     displayImage(array_0[image_index], array_0[image_index],array_0[image_index], array_0[image_index], 512, 512);} else {image_index=0}
+     displayImage(array_0[image_index], array_1[image_index],array_2[image_index], array_3[image_index], 512, 512);} else {image_index=0}
      break;
      } catch (e) { 
  } 
